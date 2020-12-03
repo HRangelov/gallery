@@ -21,19 +21,19 @@
         </div>
     </div>
     <hr>
-    {% if pets %}
-        <h2 class='text-center'>These are you pet photos</h2>
+    {% if paintings %}
+        <h2 class='text-center'>These are you paintings</h2>
         <div class="row">
             <div class="row">
-                {% for pet in pets %}
+                {% for painting in paintings %}
                     <div class="col-lg-4">
                         <div class="card" style="width: 18rem;">
-                            <img src="{{ pet.image.url }}" class="card-img-top" alt="Image of {{ pet.name }}">
+                            <img src="{{ painting.image.url }}" class="card-img-top" alt="Image of {{ painting.name }}">
                             <div class="card-body">
-                                <h5 class="card-title">{{ pet.type }} {{ pet.name }}, Age: {{ pet.age }}</h5>
-                                <p class="card-text">{{ pet.description }}</p>
-                                <p class="card-text"><strong>Owner: {{ pet.user.user.username }}</strong></p>
-                                <a href="{% url 'pet details or comment' pet.id %}" class="btn btn-primary">See
+                                <h5 class="card-title">{{ painting.type }} {{ painting.name }}, Age: {{ painting.year }}</h5>
+                                <p class="card-text">{{ painting.description }}</p>
+                                <p class="card-text"><strong>Owner: {{ painting.user.user.username }}</strong></p>
+                                <a href="{% url 'painting details or comment' painting.id %}" class="btn btn-primary">See
                                     details</a>
                             </div>
                         </div>
@@ -43,8 +43,8 @@
         </div>
     {% else %}
         <div class="text-center">
-            <h2>You have no pets</h2>
-            <a href="{% url 'create pet' %}" class="btn btn-success">Add Pet Photo</a>
+            <h2>You have no paintings uploaded in the gallery</h2>
+            <a href="{% url 'create painting' %}" class="btn btn-success">Add Painting</a>
         </div>
     {% endif %}
 {% endblock %}

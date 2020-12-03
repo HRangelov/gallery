@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
-# from accounts.decorators import user_required
+from accounts.decorators import user_required
 from paintings.forms import CommentForm
 from paintings.forms import PaintingForm
 from paintings.models import Painting, Like, Comment

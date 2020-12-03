@@ -23,5 +23,6 @@ from paintings.views import list_painting
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('common.urls')),
+    path('accounts/', include('accounts.urls')),
     path('paintings/', include('paintings.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

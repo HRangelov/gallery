@@ -2,7 +2,7 @@
 {% block site_content %}
     <h1 class='text-center'>All paintings</h1>
     <div class="row">
-        {% for painting in gallery %}
+        {% for painting in paintings %}
             <div class="col-lg-4">
                 <div class="card" style="width: 18rem;">
                     <img src="{{ painting.image.url }}" class="card-img-top" alt="...">

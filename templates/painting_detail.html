@@ -8,24 +8,24 @@
             <div class="d-flex justify-content-between">
                 <h5><u>Type:</u> {{ painting.type }}</h5>
                 <h5><u>Name:</u> {{ painting.name }}</h5>
-                <h5><u>Age:</u> {{ painting.year }}</h5>
-{#                <h5><u>Owner:</u> <a href="{% url 'user profile' pet.user.user_id %}"> {{ pet.user.user.username }}</a>#}
-{#                </h5>#}
+                <h5><u>Year:</u> {{ painting.year }}</h5>
+                <h5><u>Owner:</u> <a href="{% url 'user profile' painting.user.user_id %}"> {{ painting.user.user.username }}</a>
+                </h5>
             </div>
             <p class="mt-2">Description: {{ painting.description }}</p>
             <div>
-                {#                {% if can_edit %}#}
+                {% if can_edit %}
                 <a href="{% url 'edit painting' painting.pk %}" class="btn btn-success">Edit</a>
-                {#                {% endif %}#}
+                {% endif %}
                 {% if can_delete %}
                     <a href="{% url 'delete painting' painting.pk %}" class="btn btn-danger">Delete</a>
                 {% endif %}
             </div>
             {% if can_like %}
                 {% if has_liked %}
-                    <a href="{% url 'like painting' pet.id %}"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                    <a href="{% url 'like painting' painting.id %}"><i class="fa fa-heart" aria-hidden="true"></i></a>
                 {% else %}
-                    <a href="{% url 'like painting' pet.id %}"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                    <a href="{% url 'like painting' painting.id %}"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                 {% endif %}
             {% endif %}
             <p class="mt-2">Likes: {{ painting.like_set.count }}</p>
