@@ -1,0 +1,18 @@
+{% extends 'shared/site.html' %}
+{% block site_content %}
+    <h1 class='text-center'>All paintings</h1>
+    <div class="row">
+        {% for painting in gallery %}
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ painting.image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ painting.type }} {{ painting.name }}, Age: {{ painting.year }}</h5>
+                        <p class="card-text">{{ painting.description }}</p>
+                        <a href="{% url 'painting details or comment' painting.id %}" class="btn btn-primary">See details</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

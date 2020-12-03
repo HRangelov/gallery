@@ -31,6 +31,7 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="gallery" type="Python.DjangoServer" factoryName="Django server">
@@ -39,6 +40,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="gallery.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -65,7 +67,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606912826448</updated>
-      <workItem from="1606912896086" duration="2752000" />
+      <workItem from="1606912896086" duration="5562000" />
+      <workItem from="1606919556217" duration="872000" />
     </task>
     <servers />
   </component>
@@ -77,6 +80,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1606914581464" />
+    <state width="1306" height="168" key="GridCell.Tab.0.bottom" timestamp="1606918573144">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1306" height="168" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606918573144" />
+    <state width="1306" height="168" key="GridCell.Tab.0.center" timestamp="1606918573144">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1306" height="168" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606918573144" />
+    <state width="1306" height="168" key="GridCell.Tab.0.left" timestamp="1606918573144">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1306" height="168" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606918573144" />
+    <state width="1306" height="168" key="GridCell.Tab.0.right" timestamp="1606918573144">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1306" height="168" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606918573144" />
     <state width="213" height="471" key="HiddenNamespacesPopup" timestamp="1606915607391">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
