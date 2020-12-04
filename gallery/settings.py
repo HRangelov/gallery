@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'paintings',
     'common',
     'accounts',
+    'bootstrap4',
 
 ]
 

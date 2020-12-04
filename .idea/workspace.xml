@@ -31,7 +31,12 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Django_online_gallery2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\django_course\repos\gallery\static" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="gallery" type="Python.DjangoServer" factoryName="Django server">
@@ -69,7 +74,8 @@
       <updated>1606912826448</updated>
       <workItem from="1606912896086" duration="5562000" />
       <workItem from="1606919556217" duration="872000" />
-      <workItem from="1607000337711" duration="6324000" />
+      <workItem from="1607000337711" duration="6964000" />
+      <workItem from="1607086651570" duration="6660000" />
     </task>
     <servers />
   </component>
@@ -85,22 +91,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607000577831" />
-    <state width="1306" height="168" key="GridCell.Tab.0.bottom" timestamp="1607006661042">
+    <state width="1306" height="168" key="GridCell.Tab.0.bottom" timestamp="1607093160025">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="168" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1607006661042" />
-    <state width="1306" height="168" key="GridCell.Tab.0.center" timestamp="1607006661042">
+    <state width="1306" height="168" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1607093160025" />
+    <state width="1306" height="168" key="GridCell.Tab.0.center" timestamp="1607093160025">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="168" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1607006661042" />
-    <state width="1306" height="168" key="GridCell.Tab.0.left" timestamp="1607006661042">
+    <state width="1306" height="168" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1607093160025" />
+    <state width="1306" height="168" key="GridCell.Tab.0.left" timestamp="1607093160025">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="168" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1607006661042" />
-    <state width="1306" height="168" key="GridCell.Tab.0.right" timestamp="1607006661042">
+    <state width="1306" height="168" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1607093160025" />
+    <state width="1306" height="168" key="GridCell.Tab.0.right" timestamp="1607093160025">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="168" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1607006661042" />
+    <state width="1306" height="168" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1607093160025" />
     <state width="213" height="471" key="HiddenNamespacesPopup" timestamp="1606915607391">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -109,9 +115,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="581" y="224" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1366.728@0.0.1366.728" timestamp="1606914618828" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606914694111">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1607091440978">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606914694111" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1607091440978" />
   </component>
 </project>

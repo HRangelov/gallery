@@ -1,11 +1,14 @@
 {% extends 'shared/site.html' %}
 {% block site_content %}
+    {% load static %}
+
     <div class="jumbotron parent">
+
         <img style="width: 100%"
-             src="https://cdn.pixabay.com/photo/2018/02/04/09/09/brushes-3129361_960_720.jpg" class="img-fluid" alt="Responsive image">
+             src="{% static './image_loading_page1.png' %}" class="img-fluid" alt="Responsive image">
         <div class="absolute">
-            <h1 class="display-4">Welcome to the Gallery</h1>
-            <p class="lead">Share your paintings.</p>
+            <h1 class="display-5">Welcome to the Online Gallery</h1>
+            <p class="lead">Share your paintings or make a tour throuht the gallery to look at the paintings that are already shared</p>
             <hr class="my-4">
             <div class="inner cover">
                 <h1 class="cover-heading"></h1>

@@ -19,7 +19,7 @@ def list_painting(request):
         'paintings': Painting.objects.all(),
     }
 
-    # return render(request, 'painting_list.html', context)
+    return render(request, 'painting_list.html', context)
 
 
 @login_required
@@ -32,17 +32,17 @@ def details_or_comment_painting(request, pk):
             'can_delete': request.user == painting.user.user,
             'can_edit': request.user == painting.user.user,
             'can_like': request.user != painting.user.user,
-            # 'has_liked': painting.like_set.filter(user_id=request.user.userprofile.id).exists(),
+            'has_liked': painting.like_set.filter(user_id=request.user.userprofile.id).exists(),
             'can_comment': request.user != painting.user.user,
         }
 
-        # return render(request, 'painting_detail.html', context)
+        return render(request, 'painting_detail.html', context)
     else:
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = Comment(text=form.cleaned_data['text'])
             comment.painting = painting
-            # comment.user = request.user.userprofile
+            comment.user = request.user.userprofile
             comment.save()
             return redirect('painting details or comment', pk)
         context = {
@@ -50,7 +50,7 @@ def details_or_comment_painting(request, pk):
             'form': form,
         }
 
-        # return render(request, 'painting_detail.html', context)
+        return render(request, 'painting_detail.html', context)
 
 
 def persist_painting(request, painting, template_name):
@@ -86,7 +86,7 @@ def persist_painting(request, painting, template_name):
         return render(request, f'{template_name}.html', context)
 
 
-# @user_required(Painting)
+@user_required(Painting)
 def edit_painting(request, pk):
     painting = Painting.objects.get(pk=pk)
     return persist_painting(request, painting, 'painting_edit')
@@ -95,7 +95,7 @@ def edit_painting(request, pk):
 @login_required
 def create_painting(request):
     painting = Painting()
-    return persist_painting(request, painting, 'pet_create')
+    return persist_painting(request, painting, 'painting_create')
 
 
 @login_required
@@ -109,13 +109,13 @@ def delete_painting(request, pk):
             'painting': painting,
         }
 
-        # return render(request, 'painting_delete.html', context)
+        return render(request, 'painting_delete.html', context)
     else:
         painting.delete()
         return redirect('list paintings')
 
 
-# @login_required
+@login_required
 def like_painting(request, pk):
     like = Like.objects.filter(user_id=request.user.userprofile.id, painting_id=pk).first()
 
@@ -126,4 +126,4 @@ def like_painting(request, pk):
         like = Like(test=str(pk), user=request.user.userprofile)
         like.painting = painting
         like.save()
-    # return redirect('painting details or comment', pk)
+    return redirect('painting details or comment', pk)
