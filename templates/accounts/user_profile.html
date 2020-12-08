@@ -30,7 +30,8 @@
                         <div class="card" style="width: 18rem;">
                             <img src="{{ painting.image.url }}" class="card-img-top" alt="Image of {{ painting.name }}">
                             <div class="card-body">
-                                <h5 class="card-title">{{ painting.type }} {{ painting.name }}, Age: {{ painting.year }}</h5>
+                                <h5 class="card-title"> {{ painting.name }}</h5>
+                                <h6 class="card-title">Category: {{ painting.type }}</h6>
                                 <p class="card-text">{{ painting.description }}</p>
                                 <p class="card-text"><strong>Owner: {{ painting.user.user.username }}</strong></p>
                                 <a href="{% url 'painting details or comment' painting.id %}" class="btn btn-primary">See
@@ -44,7 +45,7 @@
     {% else %}
         <div class="text-center">
             <h2>You have no paintings uploaded in the gallery</h2>
-            <a href="{% url 'create painting' %}" class="btn btn-success">Add Painting</a>
+            <a href="{% url 'create painting' %}" class="btn btn-primary">Add Painting</a>
         </div>
     {% endif %}
 {% endblock %}

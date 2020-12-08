@@ -8,7 +8,7 @@
             <div class="d-flex justify-content-between">
                 <h5><u>Type:</u> {{ painting.type }}</h5>
                 <h5><u>Name:</u> {{ painting.name }}</h5>
-                <h5><u>Year:</u> {{ painting.year }}</h5>
+
                 <h5><u>Owner:</u> <a href="{% url 'user profile' painting.user.user_id %}"> {{ painting.user.user.username }}</a>
                 </h5>
             </div>
@@ -23,12 +23,12 @@
             </div>
             {% if can_like %}
                 {% if has_liked %}
-                    <a href="{% url 'like painting' painting.id %}"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                    <a href="{% url 'like painting' painting.id %}"><i class="fa fa-star" aria-hidden="true"></i></a>
                 {% else %}
-                    <a href="{% url 'like painting' painting.id %}"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                    <a href="{% url 'like painting' painting.id %}"><i class="fa fa-star-o" aria-hidden="true"></i></a>
                 {% endif %}
             {% endif %}
-            <p class="mt-2">Likes: {{ painting.like_set.count }}</p>
+            <p class="mt-2">Users Favourites: {{ painting.like_set.count }}</p>
         </div>
     </div>
     <div class="d-block" style="background-color: #f1e3e3; padding:2%">
@@ -36,7 +36,7 @@
             {% for comment in painting.comment_set.all %}
                 <div class="box">
                     <a href="{% url 'user profile' comment.user_id %}">{{ painting.user.user.username }}</a>
-                    <h5><em>{{ comment.text }}</em></h5>
+                    <h6><em>{{ comment.text }}</em></h6>
                     <hr>
                 </div>
             {% endfor %}

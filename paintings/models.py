@@ -46,10 +46,10 @@ class Painting(models.Model):
 class Like(models.Model):
     painting = models.ForeignKey(Painting, on_delete=models.CASCADE)
     test = models.CharField(max_length=2)
-    # user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
 
 class Comment(models.Model):
     painting = models.ForeignKey(Painting, on_delete=models.CASCADE)
     text = models.TextField(blank=False)
-    # user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)

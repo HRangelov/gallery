@@ -7,7 +7,8 @@
                 <div class="card" style="width: 18rem;">
                     <img src="{{ painting.image.url }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{ painting.type }} {{ painting.name }}, Age: {{ painting.year }}</h5>
+                        <h5 class="card-title"> {{ painting.name }}</h5>
+                        <h6 class="card-title">Category: {{ painting.type }}</h6>
                         <p class="card-text">{{ painting.description }}</p>
                         <a href="{% url 'painting details or comment' painting.id %}" class="btn btn-primary">See details</a>
                     </div>
