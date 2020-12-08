@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='painting',
             name='year',
-            field=models.DateTimeField(),
+            field=models.CharField(),
         ),
     ]

@@ -8,8 +8,8 @@ class LikeInline(admin.TabularInline):
 
 
 class PaintingAdmin(admin.ModelAdmin):
-    list_display = ('id', 'type', 'name', 'year')
-    list_filter = ('type', 'year')
+    list_display = ('id', 'type', 'name', )
+    list_filter = ('type', )
     inlines = (
         LikeInline,
     )

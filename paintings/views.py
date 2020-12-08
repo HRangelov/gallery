@@ -32,7 +32,7 @@ def details_or_comment_painting(request, pk):
             'can_delete': request.user == painting.user.user,
             'can_edit': request.user == painting.user.user,
             'can_like': request.user != painting.user.user,
-            'has_liked': painting.like_set.filter(user_id=request.user.userprofile.id).exists(),
+            'has_liked': painting.like_set.filter(id=request.user.userprofile.id).exists(),
             'can_comment': request.user != painting.user.user,
         }
 

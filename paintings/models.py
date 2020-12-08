@@ -4,7 +4,7 @@ from accounts.models import UserProfile
 
 #  validator jpg and jpeg files allowed.
 def is_jpg_or_jpeg_validator(value):
-    if not str(value).endswith('.jpg') or not str(value).endswith('.jpeg'):
+    if not str(value).endswith('.jpg'):
         raise ValidationError('Only .jpg or .jpeg images allowed.')
 
 
@@ -31,7 +31,7 @@ class Painting(models.Model):
     name = models.CharField(max_length=20, blank=False)
     size = models.CharField(max_length=12, blank = False)
     artist = models.CharField(max_length=20, blank=False)
-    year = models.IntegerField(blank=False)
+    year = models.CharField(max_length=4, blank=False)
     description = models.TextField(blank=False)
     image = models.ImageField(
         upload_to='paintings',

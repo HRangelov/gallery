@@ -10,9 +10,29 @@
       <user-name>postgres</user-name>
       <schema-mapping>
         <introspection-scope>
+          <node negative="1">
+            <node kind="database" qname="@">
+              <node kind="schema" qname="@" />
+            </node>
+            <node kind="database" qname="gallery">
+              <node kind="schema" negative="1" />
+            </node>
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+    <data-source name="@localhost [2]" uuid="ff25e728-b810-4c65-bb75-89020531aa49">
+      <database-info product="PostgreSQL" version="11.9" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="11.9" exact-driver-version="42.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <schema-mapping>
+        <introspection-scope>
           <node kind="database">
             <name qname="@" />
-            <name qname="gallery" />
+            <name qname="galleries" />
             <node kind="schema" qname="@" />
           </node>
         </introspection-scope>

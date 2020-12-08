@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=20)),
                 ('size', models.CharField(max_length=12)),
                 ('artist', models.CharField(max_length=20)),
-                ('year', models.IntegerField()),
+                ('year', models.CharField()),
                 ('description', models.TextField()),
                 ('image', models.ImageField(upload_to='paintings', validators=[paintings.models.is_jpg_or_jpeg_validator])),
             ],

@@ -31,7 +31,7 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -75,7 +75,9 @@
       <workItem from="1606912896086" duration="5562000" />
       <workItem from="1606919556217" duration="872000" />
       <workItem from="1607000337711" duration="6964000" />
-      <workItem from="1607086651570" duration="6660000" />
+      <workItem from="1607086651570" duration="6757000" />
+      <workItem from="1607431729028" duration="6815000" />
+      <workItem from="1607442378039" duration="299000" />
     </task>
     <servers />
   </component>
@@ -83,38 +85,46 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606914581464">
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607435622006">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1606914581464" />
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1607435622006" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1607000577831">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607000577831" />
-    <state width="1306" height="168" key="GridCell.Tab.0.bottom" timestamp="1607093160025">
+    <state width="1306" height="168" key="GridCell.Tab.0.bottom" timestamp="1607438662798">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="168" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1607093160025" />
-    <state width="1306" height="168" key="GridCell.Tab.0.center" timestamp="1607093160025">
+    <state width="1306" height="168" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1607438662798" />
+    <state width="1306" height="168" key="GridCell.Tab.0.center" timestamp="1607438662798">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="168" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1607093160025" />
-    <state width="1306" height="168" key="GridCell.Tab.0.left" timestamp="1607093160025">
+    <state width="1306" height="168" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1607438662798" />
+    <state width="1306" height="168" key="GridCell.Tab.0.left" timestamp="1607438662798">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="168" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1607093160025" />
-    <state width="1306" height="168" key="GridCell.Tab.0.right" timestamp="1607093160025">
+    <state width="1306" height="168" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1607438662798" />
+    <state width="1306" height="168" key="GridCell.Tab.0.right" timestamp="1607438662798">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="168" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1607093160025" />
-    <state width="213" height="471" key="HiddenNamespacesPopup" timestamp="1606915607391">
+    <state width="1306" height="168" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1607438662798" />
+    <state width="213" height="471" key="HiddenNamespacesPopup" timestamp="1607435786569">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="213" height="471" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1606915607391" />
-    <state x="581" y="224" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1606914618828">
+    <state width="213" height="471" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1607435786569" />
+    <state x="581" y="224" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1607435680154">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="581" y="224" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1366.728@0.0.1366.728" timestamp="1606914618828" />
+    <state x="581" y="224" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1366.728@0.0.1366.728" timestamp="1607435680154" />
+    <state x="525" y="240" width="316" height="245" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1607435396399">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="525" y="240" width="316" height="245" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.728@0.0.1366.728" timestamp="1607435396399" />
+    <state x="479" y="184" width="407" height="356" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1607435442414">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="479" y="184" width="407" height="356" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1366.728@0.0.1366.728" timestamp="1607435442414" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1607091440978">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
