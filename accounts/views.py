@@ -1,6 +1,8 @@
 from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
+from django.db import transaction
 from django.shortcuts import render, redirect
+from django.views.generic import TemplateView
 
 from accounts.forms import SignUpForm, UserProfileForm
 from accounts.models import UserProfile
@@ -26,29 +28,59 @@ def user_profile(request, pk=None):
         return redirect('current user profile')
 
 
-def signup_user(request):
-    if request.method == 'GET':
-        context = {
-            'form': SignUpForm(),
-        }
+# def signup_user(request):
+#     if request.method == 'GET':
+#         context = {
+#             'form': SignUpForm(),
+#         }
+#
+#         return render(request, 'accounts/signup.html', context)
+#     else:
+#         # Dxe5yct3WeHcCfVbVYzaf4T3W70Aainx
+#         form = SignUpForm(request.POST)
+#
+#         if form.is_valid():
+#             user = form.save()
+#             profile = UserProfile(
+#                 user=user,
+#             )
+#             profile.save()
+#
+#             login(request, user)
+#             return redirect('current user profile')
+#
+#         context = {
+#             'form': form,
+#         }
+#
+#         return render(request, 'accounts/signup.html', context)
 
-        return render(request, 'accounts/signup.html', context)
-    else:
-        # Dxe5yct3WeHcCfVbVYzaf4T3W70Aainx
-        form = SignUpForm(request.POST)
+class RegisterView(TemplateView):
+    template_name = 'accounts/signup.html'
 
-        if form.is_valid():
-            user = form.save()
-            profile = UserProfile(
-                user=user,
-            )
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user_form'] = SignUpForm()
+        context['profile_form'] = UserProfileForm()
+        return context
+
+    @transaction.atomic
+    def post(self, request):
+        user_form = SignUpForm(request.POST)
+        profile_form = UserProfileForm(request.POST, request.FILES)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user = user_form.save()
+            profile = profile_form.save(commit=False)
+            profile.user = user
             profile.save()
 
             login(request, user)
             return redirect('current user profile')
 
         context = {
-            'form': form,
+            'user_form': SignUpForm(),
+            'profile_form': UserProfileForm(),
         }
 
         return render(request, 'accounts/signup.html', context)

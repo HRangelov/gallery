@@ -73,6 +73,8 @@ def persist_painting(request, painting, template_name):
         if form.is_valid():
             if old_image:
                 clean_up_files(old_image.path)
+            # id_user
+            # form.user=request.user.userprofile
             form.save()
             Like.objects.filter(painting_id=painting.id) \
                 .delete()

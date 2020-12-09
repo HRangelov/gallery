@@ -7,7 +7,10 @@
             <div class="col-lg-6">
                 <form style="border: 1px solid grey; margin: 10% 0%; padding: 10% 5%" method="post">
                     <h2>Sign up</h2>
-                    {% bootstrap_form form %}
+{#                    {% bootstrap_form form %}#}
+                    {% bootstrap_form user_form %}
+                    {% bootstrap_form profile_form %}
+
 {#                    {{ form }}#}
                     {% csrf_token %}
                     <button class="btn btn-primary" type="submit">Sign up</button>
