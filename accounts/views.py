@@ -1,7 +1,9 @@
 from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
+from django.contrib.auth.views import LogoutView
 from django.db import transaction
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView
 
 from accounts.forms import SignUpForm, UserProfileForm
@@ -71,9 +73,12 @@ class RegisterView(TemplateView):
 
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
-            profile = profile_form.save(commit=False)
-            profile.user = user
-            profile.save()
+
+            # @receiver is used for signals
+
+            # profile = profile_form.save(commit=False)
+            # profile.user = user
+            # profile.save()
 
             login(request, user)
             return redirect('current user profile')
@@ -86,6 +91,9 @@ class RegisterView(TemplateView):
         return render(request, 'accounts/signup.html', context)
 
 
-def signout_user(request):
-    logout(request)
-    return redirect('index')
+# def signout_user(request):
+#     logout(request)
+#     return redirect('index')
+
+class SignOutView(LogoutView):
+    next_page = reverse_lazy('index')

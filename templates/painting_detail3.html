@@ -5,12 +5,12 @@
         <div class="d-inline p-3 w-60">
             {% if can_like %}
                 {% if has_liked %}
-                    <a href="{% url 'like painting' painting.id %}"><i class="fa fa-star" aria-hidden="true"></i></a>
+                    <h4><a href="{% url 'like painting' painting.id %}"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a></h4>
                 {% else %}
-                    <a href="{% url 'like painting' painting.id %}"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                    <h4><a href="{% url 'like painting' painting.id %}"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a></h4>
                 {% endif %}
             {% endif %}
-            <p class="mt-2">Users Favourites: {{ painting.like_set.count }}</p>
+            <p class="mt-2">Thumbs up: {{ painting.like_set.count }}</p>
             <img src="{{ painting.image.url }}" class="img-fluid img-thumbnail" alt="Responsive image">
             {#            <img src="{{ painting.image.url }}" class="w-50 rounded mx-auto d-block">#}
 

@@ -31,7 +31,7 @@
                             <img src="{{ painting.image.url }}" class="card-img-top" alt="Image of {{ painting.name }}">
                             <div class="card-body">
                                 <h5 class="card-title"> {{ painting.name }}</h5>
-                                <h6 class="card-title">Category: {{ painting.type }}</h6>
+                                <h6 class="card-title">Artist: {{ painting.artist }}</h6>
                                 <p class="card-text">{{ painting.description }}</p>
                                 <p class="card-text"><strong>Owner: {{ painting.user.user.username }}</strong></p>
                                 <a href="{% url 'painting details or comment' painting.id %}" class="btn btn-primary">See
