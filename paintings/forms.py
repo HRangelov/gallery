@@ -21,9 +21,8 @@ class PaintingForm(forms.ModelForm):
 
     class Meta:
         model = Painting
-        # fields = ''
-        # exclude = ('user', )
-        fields = '__all__'
+        exclude = ('user', )
+        # fields = '__all__'
         widgets = {
             'image_url': forms.TextInput(
                 attrs={

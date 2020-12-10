@@ -5,6 +5,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+from django.views.generic import ListView
 
 from accounts.decorators import user_required
 from paintings.forms import CommentForm
@@ -14,12 +15,17 @@ from paintings.models import Painting, Like, Comment
 def clean_up_files(path):
     os.remove(path)
 
-def list_painting(request):
-    context = {
-        'paintings': Painting.objects.all(),
-    }
+# def list_painting(request):
+#     context = {
+#         'paintings': Painting.objects.all(),
+#     }
+#
+#     return render(request, 'painting_list.html', context)
 
-    return render(request, 'painting_list.html', context)
+class PaintingsListView(ListView):
+    model = Painting
+    template_name = 'painting_list.html'
+    context_object_name = 'paintings'
 
 
 @login_required
@@ -74,8 +80,10 @@ def persist_painting(request, painting, template_name):
             if old_image:
                 clean_up_files(old_image.path)
             # id_user
-            # form.user=request.user.userprofile
-            form.save()
+            painting = form.save(commit=False)
+            painting.user = request.user.userprofile
+            painting.save()
+            # form.save()
             Like.objects.filter(painting_id=painting.id) \
                 .delete()
             return redirect('painting details or comment', painting.pk)
