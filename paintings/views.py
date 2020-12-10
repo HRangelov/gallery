@@ -36,7 +36,7 @@ def details_or_comment_painting(request, pk):
             'can_comment': request.user != painting.user.user,
         }
 
-        return render(request, 'painting_detail.html', context)
+        return render(request, 'painting_detail3.html', context)
     else:
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -50,7 +50,7 @@ def details_or_comment_painting(request, pk):
             'form': form,
         }
 
-        return render(request, 'painting_detail.html', context)
+        return render(request, 'painting_detail3.html', context)
 
 
 def persist_painting(request, painting, template_name):

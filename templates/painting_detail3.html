@@ -1,27 +1,8 @@
 {% extends 'shared/site.html' %}
 {% block site_content %}
-
+    {% load bootstrap4 %}
     <div class="d-flex">
-        <div class="d-inline p-2 w-50">
-            <img src="{{ painting.image.url }}" class="w-50 rounded mx-auto d-block">
-        </div>
-        <div class="d-inline p-2 w-50">
-            <div class="d-flex justify-content-between">
-                <h5><u>Type:</u> {{ painting.type }}</h5>
-                <h5><u>Name:</u> {{ painting.name }}</h5>
-
-                <h5><u>Owner:</u> <a href="{% url 'user profile' painting.user.user_id %}"> {{ painting.user.user.username }}</a>
-                </h5>
-            </div>
-            <p class="mt-2">Description: {{ painting.description }}</p>
-            <div>
-                {% if can_edit %}
-                <a href="{% url 'edit painting' painting.pk %}" class="btn btn-success">Edit</a>
-                {% endif %}
-                {% if can_delete %}
-                    <a href="{% url 'delete painting' painting.pk %}" class="btn btn-danger">Delete</a>
-                {% endif %}
-            </div>
+        <div class="d-inline p-3 w-60">
             {% if can_like %}
                 {% if has_liked %}
                     <a href="{% url 'like painting' painting.id %}"><i class="fa fa-star" aria-hidden="true"></i></a>
@@ -30,12 +11,39 @@
                 {% endif %}
             {% endif %}
             <p class="mt-2">Users Favourites: {{ painting.like_set.count }}</p>
+            <img src="{{ painting.image.url }}" class="img-fluid img-thumbnail" alt="Responsive image">
+            {#            <img src="{{ painting.image.url }}" class="w-50 rounded mx-auto d-block">#}
+
         </div>
+        <div class="d-inline p-2 w-50">
+            <h5>Details:</h5>
+            <ul class="list-group">
+                <li class="list-group-item">Name: {{ painting.name }}</li>
+                <li class="list-group-item">Artist: {{ painting.artist }}</li>
+                <li class="list-group-item">Type: {{ painting.type }}</li>
+                <li class="list-group-item">Size: {{ painting.size }}</li>
+                <li class="list-group-item">Published by:<a
+                        href="{% url 'user profile' painting.user.user_id %}"> {{ painting.user.user.username }}</a>
+                </li>
+                <li class="list-group-item">Description: {{ painting.description }}</li>
+
+            </ul>
+
+            {% if can_edit %}
+                <a href="{% url 'edit painting' painting.pk %}" class="btn btn-success">Edit</a>
+            {% endif %}
+            {% if can_delete %}
+                <a href="{% url 'delete painting' painting.pk %}" class="btn btn-danger">Delete</a>
+            {% endif %}
+        </div>
+
     </div>
-    <div class="d-block" style="background-color: #f1e3e3; padding:2%">
+    </div>
+    <div class="col-lg-7" style="background-color: #d9e4ef; padding:1%">
         {% if painting.comment_set.exists %}
             {% for comment in painting.comment_set.all %}
                 <div class="box">
+
                     <a href="{% url 'user profile' comment.user_id %}">{{ painting.user.user.username }}</a>
                     <h6><em>{{ comment.text }}</em></h6>
                     <hr>
@@ -49,10 +57,11 @@
         {% if can_comment %}
             <div class="box">
                 <form method="post" action="{% url 'painting details or comment' painting.pk %}">
-                    {{ form }}
+                    {% bootstrap_form form %}
                     {% csrf_token %}
                     <button class="btn btn-primary mt-2" type="submit">Add comment</button>
                 </form>
+            </div>
             </div>
         {% endif %}
     </div>
