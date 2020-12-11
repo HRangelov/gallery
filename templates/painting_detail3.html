@@ -22,7 +22,12 @@
                 <li class="list-group-item"><i class="fa fa-paint-brush" aria-hidden="true"></i> Artist: {{ painting.artist }}</li>
                 <li class="list-group-item"><i class="fa fa-tag" aria-hidden="true"></i> Type: {{ painting.type }}</li>
                 <li class="list-group-item"><i class="fa fa-object-ungroup" aria-hidden="true"></i> Size: {{ painting.size }}</li>
+
+                    {% if painting.price > 0 %}
                 <li class="list-group-item"><i class="fa fa-money" aria-hidden="true"></i> Price: {{ painting.price }} USD</li>
+                    {% else %}
+                <li class="list-group-item"><i class="fa fa-money" aria-hidden="true"></i> Price: Not for sale</li>
+                    {% endif %}
                 <li class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i> Published by:<a
                         href="{% url 'user profile' painting.user.user_id %}"> {{ painting.user.user.username }}</a>
                 </li>
@@ -52,7 +57,7 @@
             {% endfor %}
         {% else %}
             <div class="box">
-                <h3>There are no comments for this painting. </h3>
+                <h5>There are no comments for this painting. </h5>
             </div>
         {% endif %}
         {% if can_comment %}

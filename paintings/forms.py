@@ -32,3 +32,9 @@ class PaintingForm(forms.ModelForm, BootstrapFormMixin):
                 }
             )
         }
+
+    def clean_price(self):
+        price = self.cleaned_data.get('price', False)
+        if price < 0:
+            raise forms.ValidationError('Price cannot be negative')
+        return price
