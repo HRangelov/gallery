@@ -18,14 +18,15 @@
         <div class="d-inline p-2 w-50">
             <h5>Details:</h5>
             <ul class="list-group">
-                <li class="list-group-item">Name: {{ painting.name }}</li>
-                <li class="list-group-item">Artist: {{ painting.artist }}</li>
-                <li class="list-group-item">Type: {{ painting.type }}</li>
-                <li class="list-group-item">Size: {{ painting.size }}</li>
-                <li class="list-group-item">Published by:<a
+                <li class="list-group-item"><i class="fa fa-picture-o" aria-hidden="true"></i> Name: {{ painting.name }}</li>
+                <li class="list-group-item"><i class="fa fa-paint-brush" aria-hidden="true"></i> Artist: {{ painting.artist }}</li>
+                <li class="list-group-item"><i class="fa fa-tag" aria-hidden="true"></i> Type: {{ painting.type }}</li>
+                <li class="list-group-item"><i class="fa fa-object-ungroup" aria-hidden="true"></i> Size: {{ painting.size }}</li>
+                <li class="list-group-item"><i class="fa fa-money" aria-hidden="true"></i> Price: {{ painting.price }} USD</li>
+                <li class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i> Published by:<a
                         href="{% url 'user profile' painting.user.user_id %}"> {{ painting.user.user.username }}</a>
                 </li>
-                <li class="list-group-item">Description: {{ painting.description }}</li>
+                <li class="list-group-item"><i class="fa fa-commenting" aria-hidden="true"></i> Description: {{ painting.description }}</li>
 
             </ul>
 

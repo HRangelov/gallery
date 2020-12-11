@@ -7,6 +7,7 @@ class UserProfile(models.Model):
         upload_to='users',
         blank=True
     )
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):

@@ -31,8 +31,10 @@ class Painting(models.Model):
     name = models.CharField(max_length=20, blank=False)
     size = models.CharField(max_length=12, blank = False)
     artist = models.CharField(max_length=20, blank=False)
-    year = models.CharField(max_length=4, blank=False)
+    # year = models.CharField(max_length=4, blank=False)
+    price = models.IntegerField(default=0)
     description = models.TextField(blank=False)
+
     image = models.ImageField(
         upload_to='paintings',
         validators = (is_jpg_or_jpeg_validator, )
