@@ -56421,6 +56421,7 @@ r/10
     </sequence>
     <table id="4714" parent="17" name="accounts_userprofile">
       <ObjectId>16984</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>720</StateNumber>
     </table>
@@ -56476,6 +56477,7 @@ r/10
     </table>
     <table id="4725" parent="17" name="paintings_comment">
       <ObjectId>16950</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>705</StateNumber>
     </table>
@@ -56486,6 +56488,7 @@ r/10
     </table>
     <table id="4727" parent="17" name="paintings_painting">
       <ObjectId>16931</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>721</StateNumber>
     </table>

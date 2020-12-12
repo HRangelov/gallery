@@ -1,19 +1,49 @@
 {% extends 'shared/site.html' %}
 {% block site_content %}
+    {% load bootstrap4 %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col "></div><!-- This is the filler column -->
+            <div class="col-auto">
+                <form class="form-inline my-2 my-lg-0 ml-auto" method="get" action="{% url 'list paintings' %}">
+                    {% bootstrap_form filter_form %}
+
+                    {% csrf_token %}
+
+                    <button class="btn  my-2 my-sm-0" type="submit">Filter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <ul>
+
+
+    </ul>
     <h1 class='text-center'>Paintings in our Gallery</h1>
-    <div class="row">
+    {% if not paintings %}
+        <h5 class='text-center'>No Paintings match the criteria.</h5>
+        <h5 class='text-center'>Please use other criteria.</h5>
+
+    {% else %}
+        <div class="row">
         {% for painting in paintings %}
             <div class="col-lg-4">
                 <div class="card" style="width: 18rem;">
                     <img src="{{ painting.image.url }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title"><i class="fa fa-picture-o" aria-hidden="true"></i> {{ painting.name }}</h5>
-                        <h6 class="card-title"><i class="fa fa-paint-brush" aria-hidden="true"></i> Artist: {{ painting.artist }}</h6>
-                        <p class="card-text"><i class="fa fa-bars" aria-hidden="true"></i> {{ painting.description }}</p>
-                        <a href="{% url 'painting details or comment' painting.id %}" class="link"><i class="fa fa-info" aria-hidden="true"></i> View details</a>
+                        <h5 class="card-title"><i class="fa fa-picture-o" aria-hidden="true"></i> {{ painting.name }}
+                        </h5>
+                        <h6 class="card-title"><i class="fa fa-paint-brush" aria-hidden="true"></i>
+                            Artist: {{ painting.artist }}</h6>
+                        <p class="card-text"><i class="fa fa-bars" aria-hidden="true"></i> {{ painting.description }}
+                        </p>
+                        <a href="{% url 'painting details or comment' painting.id %}" class="link"><i class="fa fa-info"
+                                                                                                      aria-hidden="true"></i>
+                            View details</a>
                     </div>
                 </div>
             </div>
         {% endfor %}
-    </div>
+    {% endif %}
+</div>
 {% endblock %}

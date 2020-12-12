@@ -1,8 +1,9 @@
 {% extends 'shared/site.html' %}
 {% block site_content %}
+    {% load bootstrap4 %}
     <div class="text-center">
-        <h1>Hello, {{ profile_user.username }}!</h1>
-        <h5>This is your profile</h5>
+        <h2> {{ profile_user.username }}'s Profile Page</h2>
+        <h5>This is your profile picture</h5>
         {% if profile.profile_picture %}
             <img class="rounded-circle mb-3" src="{{ profile.profile_picture.url }}" alt="Generic placeholder image"
                  width="140"
@@ -12,9 +13,12 @@
                  alt="Generic placeholder image" width="140"
                  height="140">
         {% endif %}
+
         <div class="w-50 m-auto">
+            <h5 class='text-center'>Your email is {{ profile.email }}</h5>
+            <h4 class='text-center'>Edit your profile here</h4>
             <form action="{% url 'current user profile' %}" method="post" enctype="multipart/form-data">
-                {{ form }}
+                {% bootstrap_form form %}
                 {% csrf_token %}
                 <button class="btn btn-primary">Upload</button>
             </form>
@@ -22,7 +26,7 @@
     </div>
     <hr>
     {% if paintings %}
-        <h2 class='text-center'>These are you paintings</h2>
+        <h4 class='text-center'>These are you paintings</h4>
         <div class="row">
             <div class="row">
                 {% for painting in paintings %}
@@ -30,13 +34,16 @@
                         <div class="card" style="width: 18rem;">
                             <img src="{{ painting.image.url }}" class="card-img-top" alt="Image of {{ painting.name }}">
                             <div class="card-body">
-                                <h5 class="card-title"> {{ painting.name }}</h5>
-                                <h6 class="card-title">Artist: {{ painting.artist }}</h6>
-                                <p class="card-text">{{ painting.description }}</p>
-                                <p class="card-text"><strong>Owner: {{ painting.user.user.username }}</strong></p>
-                                <a href="{% url 'painting details or comment' painting.id %}" class="btn btn-primary">See
-                                    details</a>
-                            </div>
+                        <h5 class="card-title"><i class="fa fa-picture-o" aria-hidden="true"></i> {{ painting.name }}
+                        </h5>
+                        <h6 class="card-title"><i class="fa fa-paint-brush" aria-hidden="true"></i>
+                            Artist: {{ painting.artist }}</h6>
+                        <p class="card-text"><i class="fa fa-bars" aria-hidden="true"></i> {{ painting.description }}
+                        </p>
+                        <a href="{% url 'painting details or comment' painting.id %}" class="link"><i class="fa fa-info"
+                                                                                                      aria-hidden="true"></i>
+                            View details</a>
+                    </div>
                         </div>
                     </div>
                 {% endfor %}

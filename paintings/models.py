@@ -55,3 +55,6 @@ class Comment(models.Model):
     painting = models.ForeignKey(Painting, on_delete=models.CASCADE)
     text = models.TextField(blank=False)
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.painting}; {self.user}'

@@ -15,6 +15,7 @@ class PaintingAdmin(admin.ModelAdmin):
     )
 
 
+
 admin.site.register(Painting, PaintingAdmin)
 admin.site.register(Comment)
 admin.site.register(Like)

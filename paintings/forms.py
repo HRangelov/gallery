@@ -38,3 +38,20 @@ class PaintingForm(forms.ModelForm, BootstrapFormMixin):
         if price < 0:
             raise forms.ValidationError('Price cannot be negative')
         return price
+
+class FilterForm(forms.Form):
+    ORDER_ASC = 'asc'
+    ORDER_DESC = 'desc'
+
+    ORDER_CHOICES = (
+        (ORDER_ASC, 'Ascending'),
+        (ORDER_DESC, 'Descending'),
+    )
+
+    text = forms.CharField(
+        required=False,
+    )
+    order = forms.ChoiceField(
+        choices=ORDER_CHOICES,
+        required=False,
+    )

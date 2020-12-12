@@ -28,6 +28,7 @@
                     {% else %}
                 <li class="list-group-item"><i class="fa fa-money" aria-hidden="true"></i> Price: Not for sale</li>
                     {% endif %}
+                <li class="list-group-item"><i class="fa fa-envelope" aria-hidden="true"></i> Email: {{ painting.user.email }}</li>
                 <li class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i> Published by:<a
                         href="{% url 'user profile' painting.user.user_id %}"> {{ painting.user.user.username }}</a>
                 </li>
@@ -50,7 +51,7 @@
             {% for comment in painting.comment_set.all %}
                 <div class="box">
 
-                    <a href="{% url 'user profile' comment.user_id %}">{{ painting.user.user.username }}</a>
+                    <a href="{% url 'user profile' comment.user_id %}">{{ painting.user. }}</a>
                     <h6><em>{{ comment.text }}</em></h6>
                     <hr>
                 </div>
