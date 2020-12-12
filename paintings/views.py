@@ -12,6 +12,7 @@ from paintings.forms import CommentForm, FilterForm
 from paintings.forms import PaintingForm
 from paintings.models import Painting, Like, Comment
 
+
 def clean_up_files(path):
     os.remove(path)
 
@@ -113,8 +114,10 @@ def persist_painting(request, painting, template_name):
             instance=painting
         )
         if form.is_valid():
-            if old_image:
-                clean_up_files(old_image.path)
+            new_image = request.FILES
+            if len(new_image) > 1:
+                if old_image:
+                    clean_up_files(old_image.path)
             # id_user
             painting = form.save(commit=False)
             painting.user = request.user.userprofile
