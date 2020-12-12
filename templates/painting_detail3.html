@@ -51,8 +51,9 @@
             {% for comment in painting.comment_set.all %}
                 <div class="box">
 
-                    <a href="{% url 'user profile' comment.user_id %}">{{ painting.user. }}</a>
-                    <h6><em>{{ comment.text }}</em></h6>
+                    <a href="{% url 'user profile' comment.user_id %}"></a>
+                    <h6><em><i class="fa fa-user" aria-hidden="true"></i> {{ comment.name }} said:</em></h6>
+                    <h6>{{ comment.text }}</h6>
                     <hr>
                 </div>
             {% endfor %}
@@ -61,7 +62,7 @@
                 <h5>There are no comments for this painting. </h5>
             </div>
         {% endif %}
-        {% if can_comment %}
+{#        {% if can_comment %}#}
             <div class="box">
                 <form method="post" action="{% url 'painting details or comment' painting.pk %}">
                     {% bootstrap_form form %}
@@ -70,6 +71,6 @@
                 </form>
             </div>
             </div>
-        {% endif %}
+{#        {% endif %}#}
     </div>
 {% endblock %}

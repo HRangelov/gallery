@@ -54,6 +54,7 @@ class Like(models.Model):
 class Comment(models.Model):
     painting = models.ForeignKey(Painting, on_delete=models.CASCADE)
     text = models.TextField(blank=False)
+    name = models.CharField(max_length=20, blank=False)
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
     def __str__(self):

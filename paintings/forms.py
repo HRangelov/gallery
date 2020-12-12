@@ -5,6 +5,7 @@ from paintings.models import Painting
 
 
 class CommentForm(forms.Form):
+    name = forms.CharField()
     text = forms.CharField(
         widget=forms.Textarea(
             attrs={

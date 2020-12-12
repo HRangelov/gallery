@@ -80,7 +80,8 @@ def details_or_comment_painting(request, pk):
     else:
         form = CommentForm(request.POST)
         if form.is_valid():
-            comment = Comment(text=form.cleaned_data['text'])
+            comment = Comment(text=form.cleaned_data['text'], name=form.cleaned_data['name'])
+            # comment = Comment(text=form.cleaned_data['text'])
             comment.painting = painting
             comment.user = request.user.userprofile
             comment.save()
