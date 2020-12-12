@@ -1,5 +1,5 @@
 # Online Gallery
-> Online Gallery is a Django based project of an online place where you can show your paintings to the public. It is made for the SoftUni's Python Web Framework November 2020 course project defence exam.  
+> Online Gallery is a Django based project of an online application where you can show your paintings to the public. It is made for the SoftUni's Python Web Framework November 2020 course project defence exam.  
 
 ## Table of contents
 * [General info](#general-info)
@@ -54,7 +54,7 @@ To-do list:
 
 
 ## Status
-Project is: _in progress_?
+Project is: _in progress_
 
 ## Inspiration
 Project is inspired by a Bulgarian Facebook group for sharing paintings of hobby artists. Some of the functionalities are base on the materials in the course Python Web Framework at SoftUni.
